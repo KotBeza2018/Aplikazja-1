@@ -16,6 +16,7 @@ namespace Aplikazja_1
             Console.WriteLine(tekst);
             //Console.ReadLine();
             Main(args);
+
         }
     }
 }
