@@ -15,14 +15,17 @@ namespace Aplikazja_1
 
             Console.WriteLine("Wpisz tekst:") ;
             string tekst = Console.ReadLine();
+
+            byte[] szyfr = System.Text.Encoding.UTF8.GetBytes("domekdomekdomekdomekdomekdomekto");
+
             using (Aes myAes = Aes.Create())
             {
 
                 // Encrypt the string to an array of bytes.
-                byte[] encrypted = EncryptStringToBytes_Aes(tekst, myAes.Key, myAes.IV);
+                byte[] encrypted = EncryptStringToBytes_Aes(tekst, szyfr, myAes.IV);
 
                 // Decrypt the bytes to a string.
-                string roundtrip = DecryptStringFromBytes_Aes(encrypted, myAes.Key, myAes.IV);
+                string roundtrip = DecryptStringFromBytes_Aes(encrypted, szyfr, myAes.IV);
                 string zaszyfrowane = System.Text.Encoding.UTF8.GetString(encrypted);
                 //Display the original data and the decrypted data.
                 Console.WriteLine("Tekst wpisany:   {0}", tekst);
@@ -107,12 +110,12 @@ namespace Aplikazja_1
                             // Read the decrypted bytes from the decrypting stream
                             // and place them in a string.
                             plaintext = srDecrypt.ReadToEnd();
-                        }
-                    }
-                }
-            }
-
+                   
             return plaintext;
         }
     }
 }
+     }
+                    }
+                }
+            }
