@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplikazja 1", "Aplikazja 1.csproj", "{4B6B9D6E-C59F-4DE5-8738-669816AC8643}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplikacja2 Szyfrator", "..\Aplikacja2 Szyfrator\Aplikacja2 Szyfrator.csproj", "{4DAD6D73-D80B-45A6-8098-021D6E3B4FCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B6B9D6E-C59F-4DE5-8738-669816AC8643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B6B9D6E-C59F-4DE5-8738-669816AC8643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B6B9D6E-C59F-4DE5-8738-669816AC8643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B6B9D6E-C59F-4DE5-8738-669816AC8643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DAD6D73-D80B-45A6-8098-021D6E3B4FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DAD6D73-D80B-45A6-8098-021D6E3B4FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DAD6D73-D80B-45A6-8098-021D6E3B4FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DAD6D73-D80B-45A6-8098-021D6E3B4FCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E2953EC-B9C4-4CAD-92C2-DDFD1750C17F}
+	EndGlobalSection
+EndGlobal
