@@ -34,7 +34,7 @@ namespace Aplikacja2_Szyfrator
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("PSIA KRÓLEWNA");
+            
         }
     }
 }

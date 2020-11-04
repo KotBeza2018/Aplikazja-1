@@ -64,7 +64,7 @@
             this.OpenButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.OpenButton.Location = new System.Drawing.Point(372, 209);
             this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(151, 101);
+            this.OpenButton.Size = new System.Drawing.Size(159, 101);
             this.OpenButton.TabIndex = 2;
             this.OpenButton.Text = "open";
             this.OpenButton.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             this.SaveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.SaveButton.Location = new System.Drawing.Point(155, 208);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(151, 102);
+            this.SaveButton.Size = new System.Drawing.Size(151, 36);
             this.SaveButton.TabIndex = 3;
             this.SaveButton.Text = "zapisz";
             this.SaveButton.UseVisualStyleBackColor = true;

@@ -16,7 +16,7 @@ namespace Aplikacja2_Szyfrator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            Application.Run(new wpisz_tu_hasło());
         }
     }
 }
