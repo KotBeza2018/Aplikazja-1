@@ -34,20 +34,26 @@ namespace Aplikacja2_Szyfrator
 
         private void zaloguj_Click(object sender, EventArgs e)
         {
-            if(pastword.Text == "test")
+            if (pastword.Text == "test")
             {
                 Console.WriteLine("Zalogowano");
-
+                new MainWindow().Show();
+                this.Hide();
             }
             else
             {
                 DialogResult result = MessageBox.Show("Błedne hasło!", "Wpisane hasło jest nieprawidłowe", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if(result == DialogResult.OK)
+                if (result == DialogResult.OK)
                 {
                     this.Close();
                 }
             }
 
         }
+
+
+        
+
+        
     }
 }

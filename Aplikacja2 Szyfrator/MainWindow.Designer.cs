@@ -32,6 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.OpenButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.text = new System.Windows.Forms.TextBox();
+            this.szyfruj = new System.Windows.Forms.Button();
+            this.odszyfruj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Tytuł
@@ -52,7 +55,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(109, 150);
+            this.label1.Location = new System.Drawing.Point(353, 101);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(437, 55);
             this.label1.TabIndex = 1;
@@ -62,9 +65,9 @@
             // 
             this.OpenButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OpenButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.OpenButton.Location = new System.Drawing.Point(372, 209);
+            this.OpenButton.Location = new System.Drawing.Point(285, 176);
             this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(159, 101);
+            this.OpenButton.Size = new System.Drawing.Size(196, 55);
             this.OpenButton.TabIndex = 2;
             this.OpenButton.Text = "open";
             this.OpenButton.UseVisualStyleBackColor = true;
@@ -74,32 +77,70 @@
             // 
             this.SaveButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.SaveButton.Location = new System.Drawing.Point(155, 208);
+            this.SaveButton.Location = new System.Drawing.Point(55, 176);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(151, 36);
+            this.SaveButton.Size = new System.Drawing.Size(224, 55);
             this.SaveButton.TabIndex = 3;
             this.SaveButton.Text = "zapisz";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // text
+            // 
+            this.text.BackColor = System.Drawing.Color.Teal;
+            this.text.Location = new System.Drawing.Point(521, 179);
+            this.text.Multiline = true;
+            this.text.Name = "text";
+            this.text.Size = new System.Drawing.Size(393, 110);
+            this.text.TabIndex = 4;
+            this.text.Text = "text";
+            this.text.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // szyfruj
+            // 
+            this.szyfruj.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.szyfruj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.szyfruj.Location = new System.Drawing.Point(55, 237);
+            this.szyfruj.Name = "szyfruj";
+            this.szyfruj.Size = new System.Drawing.Size(224, 50);
+            this.szyfruj.TabIndex = 5;
+            this.szyfruj.TabStop = false;
+            this.szyfruj.Text = "szyfruj";
+            this.szyfruj.UseVisualStyleBackColor = true;
+            this.szyfruj.Click += new System.EventHandler(this.szyfruj_Click);
+            // 
+            // odszyfruj
+            // 
+            this.odszyfruj.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.odszyfruj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.odszyfruj.Location = new System.Drawing.Point(285, 237);
+            this.odszyfruj.Name = "odszyfruj";
+            this.odszyfruj.Size = new System.Drawing.Size(196, 52);
+            this.odszyfruj.TabIndex = 6;
+            this.odszyfruj.Text = "odzszyfruj";
+            this.odszyfruj.UseVisualStyleBackColor = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1183, 660);
+            this.Controls.Add(this.odszyfruj);
+            this.Controls.Add(this.szyfruj);
+            this.Controls.Add(this.text);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.OpenButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Tytuł);
             this.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Aplikacja2_Szyfrator.Properties.Settings.Default, "SZYFRATOR", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MainWindow";
             this.Text = global::Aplikacja2_Szyfrator.Properties.Settings.Default.SZYFRATOR;
             this.TransparencyKey = System.Drawing.Color.Black;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainWindow_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,6 +152,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button OpenButton;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.TextBox text;
+        private System.Windows.Forms.Button szyfruj;
+        protected System.Windows.Forms.Button odszyfruj;
     }
 }
 
