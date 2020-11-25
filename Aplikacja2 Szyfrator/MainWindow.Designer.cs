@@ -119,6 +119,7 @@
             this.odszyfruj.TabIndex = 6;
             this.odszyfruj.Text = "odzszyfruj";
             this.odszyfruj.UseVisualStyleBackColor = true;
+            this.odszyfruj.Click += new System.EventHandler(this.odszyfruj_Click);
             // 
             // MainWindow
             // 
