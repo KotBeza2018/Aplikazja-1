@@ -93,7 +93,6 @@
             this.text.Name = "text";
             this.text.Size = new System.Drawing.Size(393, 110);
             this.text.TabIndex = 4;
-            this.text.Text = "text";
             this.text.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // szyfruj
