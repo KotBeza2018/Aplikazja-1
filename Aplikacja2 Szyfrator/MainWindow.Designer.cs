@@ -33,8 +33,6 @@
             this.OpenButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.text = new System.Windows.Forms.TextBox();
-            this.szyfruj = new System.Windows.Forms.Button();
-            this.odszyfruj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Tytuł
@@ -65,9 +63,9 @@
             // 
             this.OpenButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OpenButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.OpenButton.Location = new System.Drawing.Point(285, 176);
+            this.OpenButton.Location = new System.Drawing.Point(588, 434);
             this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(196, 55);
+            this.OpenButton.Size = new System.Drawing.Size(420, 110);
             this.OpenButton.TabIndex = 2;
             this.OpenButton.Text = "open";
             this.OpenButton.UseVisualStyleBackColor = true;
@@ -77,9 +75,9 @@
             // 
             this.SaveButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.SaveButton.Location = new System.Drawing.Point(55, 176);
+            this.SaveButton.Location = new System.Drawing.Point(151, 434);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(224, 55);
+            this.SaveButton.Size = new System.Drawing.Size(420, 110);
             this.SaveButton.TabIndex = 3;
             this.SaveButton.Text = "zapisz";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -88,37 +86,12 @@
             // text
             // 
             this.text.BackColor = System.Drawing.Color.Teal;
-            this.text.Location = new System.Drawing.Point(521, 179);
+            this.text.Location = new System.Drawing.Point(151, 168);
             this.text.Multiline = true;
             this.text.Name = "text";
-            this.text.Size = new System.Drawing.Size(393, 110);
+            this.text.Size = new System.Drawing.Size(857, 244);
             this.text.TabIndex = 4;
             this.text.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // szyfruj
-            // 
-            this.szyfruj.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.szyfruj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.szyfruj.Location = new System.Drawing.Point(55, 237);
-            this.szyfruj.Name = "szyfruj";
-            this.szyfruj.Size = new System.Drawing.Size(224, 50);
-            this.szyfruj.TabIndex = 5;
-            this.szyfruj.TabStop = false;
-            this.szyfruj.Text = "szyfruj";
-            this.szyfruj.UseVisualStyleBackColor = true;
-            this.szyfruj.Click += new System.EventHandler(this.szyfruj_Click);
-            // 
-            // odszyfruj
-            // 
-            this.odszyfruj.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.odszyfruj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.odszyfruj.Location = new System.Drawing.Point(285, 237);
-            this.odszyfruj.Name = "odszyfruj";
-            this.odszyfruj.Size = new System.Drawing.Size(196, 52);
-            this.odszyfruj.TabIndex = 6;
-            this.odszyfruj.Text = "odzszyfruj";
-            this.odszyfruj.UseVisualStyleBackColor = true;
-            this.odszyfruj.Click += new System.EventHandler(this.odszyfruj_Click);
             // 
             // MainWindow
             // 
@@ -126,8 +99,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1183, 660);
-            this.Controls.Add(this.odszyfruj);
-            this.Controls.Add(this.szyfruj);
             this.Controls.Add(this.text);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.OpenButton);
@@ -154,7 +125,6 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.TextBox text;
         private System.Windows.Forms.Button szyfruj;
-        protected System.Windows.Forms.Button odszyfruj;
     }
 }
 
