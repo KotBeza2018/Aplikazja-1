@@ -33,6 +33,7 @@
             this.OpenButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.text = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Tytuł
@@ -93,12 +94,24 @@
             this.text.TabIndex = 4;
             this.text.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Olive;
+            this.button1.Location = new System.Drawing.Point(132, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(183, 91);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1183, 660);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.text);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.OpenButton);
@@ -112,6 +125,7 @@
             this.Text = global::Aplikacja2_Szyfrator.Properties.Settings.Default.SZYFRATOR;
             this.TransparencyKey = System.Drawing.Color.Black;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainWindow_FormClosed);
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,6 +139,7 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.TextBox text;
         private System.Windows.Forms.Button szyfruj;
+        private System.Windows.Forms.Button button1;
     }
 }
 

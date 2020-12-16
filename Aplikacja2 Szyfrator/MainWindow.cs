@@ -1,4 +1,5 @@
 ﻿using Effortless.Net.Encryption;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,8 @@ namespace Aplikacja2_Szyfrator
         byte[] iv = new byte[] { 53, 182, 177, 250, 198, 222, 60, 145, 39, 169, 1, 44, 198, 67, 193, 161, 206, 77, 150, 236, 163, 37, 180, 70, 240, 182, 35, 174, 169, 118, 229, 249, };
 
         string content, path;
+
+        List<Password> password = new List<Password>();
 
         public MainWindow()
         {
@@ -63,8 +66,8 @@ namespace Aplikacja2_Szyfrator
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            
-            byte[] byteArray = Encoding.UTF8.GetBytes(zaszyfruj(text.Text));
+            string json = JsonConvert.SerializeObject(password);
+            byte[] byteArray = Encoding.UTF8.GetBytes(zaszyfruj(json));
 
 
             Stream myStream;
@@ -124,6 +127,21 @@ namespace Aplikacja2_Szyfrator
                 
 
             }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string json = "[{ 'id':0,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'},{ 'id':1,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'},{ 'id':2,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'},{ 'id':3,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'},{ 'id':4,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'},{ 'id':5,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'},{ 'id':6,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'}]";
+            // List<Password> password = new List<Password>(); // = JsonConvert.DeserializeObject<List<Password>>(json);
+            //Console.WriteLine(password[2].password);
+            string json2 = JsonConvert.SerializeObject(password);
+
+           //Console.WriteLine(json2);
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
 
         }
 

@@ -39,13 +39,6 @@
             this.label1.Font = new System.Drawing.Font("Rockwell", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(202, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 34);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "podaj hasło";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // pastword
             // 
             this.pastword.ForeColor = System.Drawing.Color.Navy;
             this.pastword.Location = new System.Drawing.Point(224, 99);
@@ -56,6 +49,13 @@
             this.pastword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pastword.UseSystemPasswordChar = true;
             this.pastword.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 34);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "podaj hasło";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // pastword
             // 
             // zaloguj
             // 
