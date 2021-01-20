@@ -22,10 +22,17 @@ namespace Aplikacja2_Szyfrator
         string content, path;
 
         List<Password> password = new List<Password>();
+        private Panel buttonPanel = new Panel();
+        //private DataGridView passwordsDataGridView = new DataGridView();
+        private Button addNewRowButton = new Button();
+        private Button deleteRowButton = new Button();
 
         public MainWindow()
         {
             InitializeComponent();
+            SetupLayout();
+            SetupDataGridView();
+            PopulateDataGridView();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -135,6 +142,7 @@ namespace Aplikacja2_Szyfrator
             string json = "[{ 'id':0,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'},{ 'id':1,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'},{ 'id':2,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'},{ 'id':3,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'},{ 'id':4,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'},{ 'id':5,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'},{ 'id':6,'name':'nazwa','login':'test','password':'<ReferenceError: test is not defined>','email':'test.co.gmail','notes':'jakieś notatki'}]";
             // List<Password> password = new List<Password>(); // = JsonConvert.DeserializeObject<List<Password>>(json);
             //Console.WriteLine(password[2].password);
+
             string json2 = JsonConvert.SerializeObject(password);
 
            //Console.WriteLine(json2);
@@ -160,8 +168,132 @@ namespace Aplikacja2_Szyfrator
 
         }
 
+
+        private void passwordsDataGridView_CellFormatting(object sender,
+            System.Windows.Forms.DataGridViewCellFormattingEventArgs e)
+        {
+            if (e != null)
+            {
+                if (this.passwordsDataGridView.Columns[e.ColumnIndex].Name == "Release Date")
+                {
+                    if (e.Value != null)
+                    {
+                        try
+                        {
+                            e.Value = DateTime.Parse(e.Value.ToString())
+                                .ToLongDateString();
+                            e.FormattingApplied = true;
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("{0} is not a valid date.", e.Value.ToString());
+                        }
+                    }
+                }
+            }
+        }
+
+        private void addNewRowButton_Click(object sender, EventArgs e)
+        {
+            this.passwordsDataGridView.Rows.Add();
+        }
+
+        private void deleteRowButton_Click(object sender, EventArgs e)
+        {
+            if (this.passwordsDataGridView.SelectedRows.Count > 0 &&
+                this.passwordsDataGridView.SelectedRows[0].Index !=
+                this.passwordsDataGridView.Rows.Count - 1)
+            {
+                this.passwordsDataGridView.Rows.RemoveAt(
+                    this.passwordsDataGridView.SelectedRows[0].Index);
+            }
+        }
+
+        private void SetupLayout()
+        {
+            //this.Size = new Size(600, 500);
+
+            addNewRowButton.Text = "Add Row";
+            addNewRowButton.Location = new Point(10, 10);
+            addNewRowButton.Click += new EventHandler(addNewRowButton_Click);
+
+            deleteRowButton.Text = "Delete Row";
+            deleteRowButton.Location = new Point(100, 10);
+            deleteRowButton.Click += new EventHandler(deleteRowButton_Click);
+
+            buttonPanel.Controls.Add(addNewRowButton);
+            buttonPanel.Controls.Add(deleteRowButton);
+            buttonPanel.Height = 50;
+            buttonPanel.Dock = DockStyle.Bottom;
+
+            this.Controls.Add(this.buttonPanel);
+        }
+
+        private void SetupDataGridView()
+        {
+            //this.Controls.Add(passwordsDataGridView);
+
+            passwordsDataGridView.ColumnCount = 7;
+            passwordsDataGridView.Name = "songsDataGridView";
+           // passwordsDataGridView.Location = new Point(8, 8);
+            //passwordsDataGridView.Size = new Size(500, 250);
+            passwordsDataGridView.AutoSizeRowsMode =
+                DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            passwordsDataGridView.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.Single;
+            passwordsDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            passwordsDataGridView.RowHeadersVisible = false;
+
+            passwordsDataGridView.Columns[0].Name = "Release Date";
+            passwordsDataGridView.Columns[1].Name = "Track";
+            passwordsDataGridView.Columns[2].Name = "Title";
+            passwordsDataGridView.Columns[3].Name = "Artist";
+            passwordsDataGridView.Columns[4].Name = "Album";
+            passwordsDataGridView.Columns[4].DefaultCellStyle.Font =
+                new Font(passwordsDataGridView.DefaultCellStyle.Font, FontStyle.Italic);
+
+            passwordsDataGridView.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+            passwordsDataGridView.MultiSelect = false;
+            passwordsDataGridView.Dock = DockStyle.None;
+            passwordsDataGridView.CellFormatting += new
+                DataGridViewCellFormattingEventHandler(
+                passwordsDataGridView_CellFormatting);
+        }
+
+        private void PopulateDataGridView()
+        {
+
+            string[] row0 = { "11/22/1968", "29", "Revolution 9",
+            "Beatles", "The Beatles [White Album]" };
+            string[] row1 = { "1960", "6", "Fools Rush In",
+            "Frank Sinatra", "Nice 'N' Easy" };
+            string[] row2 = { "11/11/1971", "1", "One of These Days",
+            "Pink Floyd", "Meddle" };
+            string[] row3 = { "1988", "7", "Where Is My Mind?",
+            "Pixies", "Surfer Rosa" };
+            string[] row4 = { "5/1981", "9", "Can't Find My Mind",
+            "Cramps", "Psychedelic Jungle" };
+            string[] row5 = { "6/10/2003", "13",
+            "Scatterbrain. (As Dead As Leaves.)",
+            "Radiohead", "Hail to the Thief" };
+            string[] row6 = { "6/30/1992", "3", "Dress", "P J Harvey", "Dry" };
+
+            passwordsDataGridView.Rows.Add(row0);
+            passwordsDataGridView.Rows.Add(row1);
+            passwordsDataGridView.Rows.Add(row2);
+            passwordsDataGridView.Rows.Add(row3);
+            passwordsDataGridView.Rows.Add(row4);
+            passwordsDataGridView.Rows.Add(row5);
+            passwordsDataGridView.Rows.Add(row6);
+
+            passwordsDataGridView.Columns[0].DisplayIndex = 3;
+            passwordsDataGridView.Columns[1].DisplayIndex = 4;
+            passwordsDataGridView.Columns[2].DisplayIndex = 0;
+            passwordsDataGridView.Columns[3].DisplayIndex = 1;
+            passwordsDataGridView.Columns[4].DisplayIndex = 2;
+        }
+
     }
-
-
 
 }
